@@ -1,0 +1,230 @@
+<!-- vim: set ts=4 et sw=4 tw=0 : -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript">
+            window.jQuery || document.write('<script src="js/jquery-2.1.3.min.js"><\/script>')
+        </script>
+        <script type="text/javascript">
+            function refreshboard(){
+                $('.choice').removeClass('selected');
+                $(window.location.search.substring(1).split(/([A-D][a-z])/).filter(function(k){return k!=""}).map(function(k){return '.'+xlat[k]}).join(',')).addClass('selected');
+            }
+            function updateqs(){
+                window.history.replaceState('','','?'+$('.selected').map(function(i,e){return xlat[$(e).attr('class').split(' ')[1]]}).toArray().join(''));
+            }
+            $(document).ready(function(event){
+                $('.choice').click(function(event){
+                    $(event.delegateTarget).toggleClass('selected');
+                    updateqs();
+                    refreshboard();
+                });
+                refreshboard();
+            });
+        </script>
+        <script type="text/javascript" src="js/xlat.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/layout.css"/>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    </head>
+    <body>
+        <div class="gb">
+            <div class="choice divh">&nbsp;</div>
+            <div class="choice divt">T</div>
+            <div class="choice divf">F</div>
+            <div class="choice divr">R</div>
+            <div class="choice divi">I</div>
+
+            <div class="choice aish">Aisling</div>
+            <div class="choice aist"><img src="https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter6.png"/><br/>veiled weapon</div>
+            <div class="choice aisf"><img src="https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDexInt1C.png"/>zone level<br/>veiled armor</div>
+            <div class="choice aisr"><img src="http://web.poecdn.com/image/Art/2DArt/UIImages/InGame/VeiledItemSymbol.png"/><br/>add veiled mod</div>
+            <div class="choice aisi"><img src="https://web.poecdn.com/image/Art/2DItems/Amulets/AgateAmulet.png"/><br/>veiled jewelery</div>
+
+            <div class="choice camh">Cameria</div>
+            <div class="choice camt"><img src="https://web.poecdn.com/image/Art/2DItems/Belts/Headhunter.png"/><br/>timeworn unique</div>
+            <div class="choice camf">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/HarbingerOrb.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/HorizonOrb.png"/><br/>harbinger/horizon orbs</div>
+            <div class="choice camr">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/AtlasRadiusWhite.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/AtlasRadiusYellow.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/AtlasRadiusRed.png"/><br/>sextants</div>
+            <div class="choice cami">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/LesserScarabSulphite.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/NormalScarabSulphite.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/GreaterScarabSulphite.png"/><br/>sulphite scarab</div>
+
+            <div class="choice elrh">Elreon</div>
+            <div class="choice elrt"><img src="https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/BinosKitchenKnife.png" height="140"/><br/>unique weapon</div>
+            <div class="choice elrf"><img src="https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/OnShocked.png"/><br/>unique armor</div>
+            <div class="choice elrr"><img src="https://web.poecdn.com/image/Art/2DItems/Amulets/UngilsHarmony.png"/><br/>unique jewelry</div>
+            <div class="choice elri">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/LesserScarabUnique.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/NormalScarabUnique.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/GreaterScarabUnique.png"/><br/>reliquary scarab</div>
+
+            <div class="choice grvh">Gravicius</div>
+            <div class="choice grvt"><img src="https://web.poecdn.com/image/Art/2DItems/Divination/InventoryIcon.png"/><br/>divination full stack</div>
+            <div class="choice grvf"><img src="https://web.poecdn.com/image/Art/2DItems/Divination/InventoryIcon.png"/><br/>random divination cards</div>
+            <div class="choice grvr"><img src="https://web.poecdn.com/image/Art/2DItems/Divination/InventoryIcon.png"/><br/>divination swap card</div>
+            <div class="choice grvi">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/LesserScarabDivination.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/NormalScarabDivination.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/GreaterScarabDivination.png"/><br/>divination scarab</div>
+
+            <div class="choice gufh">Guff</div>
+            <div class="choice guft"><img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollRare.png"/><br/>chaos spam</div>
+            <div class="choice guff"><img src="https://web.poecdn.com/image/Art/2DItems/Currency/Essence/Anger6.png"/><br/>essence spam</div>
+            <div class="choice gufr"><img src="https://web.poecdn.com/image/Art/2DItems/Currency/AnnullOrb.png"/><img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyAddModToRare.png"/><br/>annul/ex spam</div>
+            <div class="choice gufi"><img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollMagic.png"/><br/>alt spam</div>
+
+            <div class="choice hakh">Haku</div>
+            <div class="choice hakt">rare item</div>
+            <div class="choice hakf">normal/rare/unique<br/>strongbox</div>
+            <div class="choice hakr">quality rare item</div>
+            <div class="choice haki">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/LesserScarabStrongboxes.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/NormalScarabStrongboxes.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/GreaterScarabStrongboxes.png"/><br/>strongbox scarab</div>
+
+
+            <div class="choice hilh">Hillock</div>
+            <div class="choice hilt">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyWeaponQuality.png?stackSize=24"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyWeaponQuality.png?stackSize=26"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyWeaponQuality.png?stackSize=28"/>
+                <br/>weapon quality</div>
+            <div class="choice hilf">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyArmourQuality.png?stackSize=24"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyArmourQuality.png?stackSize=26"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyArmourQuality.png?stackSize=28"/>
+                <br/>armor quality</div>
+            <div class="choice hilr"><img src="https://web.poecdn.com/gen/image/WzksNCx7ImYiOiJBcnRcLzJESXRlbXNcL0ZsYXNrc1wvc3ByaW50Iiwic3AiOjAuNjA4NSwibGV2ZWwiOjB9XQ/7ae41fd7a3/Item.png"/><br/>22/24/26 flask quality</div>
+            <div class="choice hili"><img src="https://web.poecdn.com/image/Art/2DItems/Maps/Atlas2Maps/New/Volcano.png"/><br/>map quality</div>
+
+            <div class="choice itfh">It That Fled</div>
+            <div class="choice itft"><img src="https://web.poecdn.com/image/Art/2DItems/Currency/Breach/BreachShardChaos.png"/><br/>splinters</div>
+            <div class="choice itff"><img src="https://web.poecdn.com/image/Art/2DItems/Jewels/RivetedEye.png"/>zone lvl<br/>rare abyssal jewel</div>
+            <div class="choice itfr"><img src="https://web.poecdn.com/image/Art/2DItems/Currency/Breach/BreachFragmentsChaos.png"/><br/>enriched/charged/pure</div>
+            <div class="choice itfi">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/LesserScarabBreach.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/NormalScarabBreach.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/GreaterScarabBreach.png"/><br/>breach scarab</div>
+
+            <div class="choice janh">Janus</div>
+            <div class="choice jant"><img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyGemQuality.png"/><img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyMapQuality.png"/><br/></div>
+            <div class="choice janf"><img src="https://web.poecdn.com/image/Art/2DItems/Currency/ExaltedShard.png"/><br/></div>
+            <div class="choice janr"><img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyCoin.png"/><br/>perandus coins</div>
+            <div class="choice jani">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/LesserScarabPerandus.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/NormalScarabPerandus.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/GreaterScarabPerandus.png"/><br/>perandus scarab</div>
+
+            <div class="choice jorh">Jorgin</div>
+            <div class="choice jort"><img src="https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanUnique2.png"/><br/>random talismans</div>
+            <div class="choice jorf"><br/>aspect rares</div>
+            <div class="choice jorr"><img src="https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanUnique2.png"/><br/>talisman upgrade</div>
+            <div class="choice jori">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/LesserScarabBeasts.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/NormalScarabBeasts.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/GreaterScarabBeasts.png"/><br/>bestiary scarab</div>
+
+            <div class="choice korh">Korrell</div>
+            <div class="choice kort"><img src="https://web.poecdn.com/image/Art/2DItems/Currency/Essence/Anger6.png"/><br/>essences</div>
+            <div class="choice korf">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Maps/Vaal04.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Maps/AtlasMaps/FragmentPhoenix.png"/><br/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Maps/UberVaal03.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Maps/PaleCourt02.png"/><br/>fragments</div>
+            <div class="choice korr"><img src="https://web.poecdn.com/image/Art/2DItems/Currency/Delve/ShudderingFossil.png"/><br/>fossils</div>
+            <div class="choice kori">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/LesserScarabElder.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/NormalScarabElder.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/GreaterScarabElder.png"/><br/>elder scarab</div>
+
+            <div class="choice leoh">Leo</div>
+            <div class="choice leot"><img src="https://web.poecdn.com/image/Art/2DItems/Currency/SilverObol.png"/><br/>silver coins</div>
+            <div class="choice leof">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyUpgradeToRare.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollRare.png"/><br/>random currency</div>
+            <div class="choice leor">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyImplicitMod.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyModValues.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyAddModToRare.png"/><br/>affix mod</div>
+            <div class="choice leoi">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/LesserScarabTorment.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/NormalScarabTorment.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/GreaterScarabTorment.png"/><br/>torment scarab</div>
+
+            <div class="choice rikh">Riker</div>
+            <div class="choice rikt">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyUpgradeRandomly.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyVaal.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyConvertToNormal.png"/><br/>take one currency</div>
+            <div class="choice rikf"><br/>take one unique</div>
+            <div class="choice rikr">
+                <img style="width:auto" src="http://web.poecdn.com/image/Art/2DArt/UIImages/InGame/VeiledItemSymbol.png"/><br/>take one veiled (ilvl 100)</div>
+            <div class="choice riki">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/GreaterScarabDivination.png"/><br/>take one divination card</div>
+
+            <div class="choice rinh">Rin</div>
+            <div class="choice rint"><br/>maps</div>
+            <div class="choice rinf"><br/>rare maps</div>
+            <div class="choice rinr"><img src="https://web.poecdn.com/image/Art/2DItems/Maps/oba.png"/><br/>unique maps</div>
+            <div class="choice rini">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/LesserScarabMaps.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/NormalScarabMaps.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/GreaterScarabMaps.png"/><br/>cartographer scarab</div>
+
+            <div class="choice torh">Tora</div>
+            <div class="choice tort">take item ilvl 100<br/>timed trap</div>
+            <div class="choice torf">enchants<br/></div>
+            <div class="choice torr"><img src="https://web.poecdn.com/image/Art/2DItems/Gems/Support/Enlighten.png"/><br/>gem xp</div>
+            <div class="choice tori">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/LesserScarabHarbingers.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/NormalScarabHarbingers.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/GreaterScarabHarbingers.png"/><br/>harbinger scarab</div>
+
+            <div class="choice vagh">Vagan</div>
+            <div class="choice vagt"><img src="https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter6.png"/><br/>rare weapon</div>
+            <div class="choice vagf"><img src="https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDexInt1C.png"/><br/>rare armor</div>
+            <div class="choice vagr"><img src="https://web.poecdn.com/image/Art/2DItems/Amulets/AgateAmulet.png"/>zone/?/?<br/>rare jewelery</div>
+            <div class="choice vagi"><img src="https://web.poecdn.com/image/Art/2DItems/Jewels/basicdex.png"/><br/>rare jewels</div>
+
+            <div class="choice vorh">Vorici</div>
+            <div class="choice vort"><img src="https://web.poecdn.com/image/Art/2DItems/Gems/Support/Enlighten.png"/><br/>quality gems</div>
+            <div class="choice vorf">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollSocketColours.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollSocketLinks.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollSocketNumbers.png"/><br/>socket currency</div>
+            <div class="choice vorr"><img src="//web.poecdn.com/gen/image/WzUsMTQseyJzdCI6IiIsImNvbG91ciI6IlciLCJzIjowLjYwODUxOTI2OTc3Njg3NjN9XQ/ad267d691f/Socket.png"/><br/>1-3 white sockets</div>
+            <div class="choice vori">
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/LesserScarabShaper.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/NormalScarabShaper.png"/>
+                <img src="https://web.poecdn.com/image/Art/2DItems/Currency/Scarabs/GreaterScarabShaper.png"/><br/>shaper scarab</div>
+        </div>
+        <hr/>
+        <div class="vp">
+            <img style="width:auto" src="http://web.poecdn.com/image/Art/2DArt/UIImages/InGame/VeiledItemSymbol.png" width="44" height="44"/><br/>
+            <span class="vp1">Veiled Prefix 1</span><br/>
+            <span class="vp2">Veiled Prefix 2</span><br/>
+            <span class="vp3">Veiled Prefix 3</span><br/>
+            <span class="vp4">Veiled Prefix 4</span><br/>
+            <span class="vp5">Veiled Prefix 5</span><br/>
+            <span class="vp6">Veiled Prefix 6</span><br/>
+            <span class="vs1">Veiled Suffix 1</span><br/>
+            <span class="vs2">Veiled Suffix 2</span><br/>
+            <span class="vs3">Veiled Suffix 3</span><br/>
+            <span class="vs4">Veiled Suffix 4</span><br/>
+            <span class="vs5">Veiled Suffix 5</span><br/>
+            <span class="vs6">Veiled Suffix 6</span><br/>
+        </div>
+    </body>
+</html>
+
+<!--
+//web.poecdn.com/image/Art/2DArt/UIImages/InGame/ShaperItemSymbol.png
+//web.poecdn.com/image/Art/2DArt/UIImages/InGame/ElderItemSymbol.png
+-->

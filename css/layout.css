@@ -1,0 +1,148 @@
+/* vim: set ts=4 et sw=4 tw=0 :*/
+body {
+  background-color: #000;
+  margin:40px;
+}
+div {text-align:center;line-height:1em;}
+.gb {
+  display: inline-grid;
+  background-color: #000;
+  color: #ff0;
+  grid-template-rows: max-content; /*120px 120px 120px 120px 120px;*/
+  grid-gap: 3px;
+  }
+.gb > * {
+  border: 2px solid white;
+}
+.selected{
+  border: 2px solid red;
+}
+.choice {
+  background-color: #222;
+  color: #ff0;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 120%;
+}
+img {object-fit: fill;width:25%;}
+.divh{ grid-area: 1/1/2/2; }
+.divt{ grid-area: 2/1/3/2; }
+.divf{ grid-area: 3/1/4/2; }
+.divr{ grid-area: 4/1/5/2; }
+.divi{ grid-area: 5/1/6/2; }
+.aish{ grid-area: 1/2/2/3; }
+.aist{ grid-area: 2/2/3/3; }
+.aisf{ grid-area: 3/2/4/3; }
+.aisr{ grid-area: 4/2/5/3; }
+.aisi{ grid-area: 5/2/6/3; }
+.camh{ grid-area: 1/3/2/4; }
+.camt{ grid-area: 2/3/3/4; }
+.camf{ grid-area: 3/3/4/4; }
+.camr{ grid-area: 4/3/5/4; }
+.cami{ grid-area: 5/3/6/4; }
+.elrh{ grid-area: 1/4/2/5; }
+.elrt{ grid-area: 2/4/3/5; }
+.elrf{ grid-area: 3/4/4/5; }
+.elrr{ grid-area: 4/4/5/5; }
+.elri{ grid-area: 5/4/6/5; }
+.grvh{ grid-area: 1/5/2/6; }
+.grvt{ grid-area: 2/5/3/6; }
+.grvf{ grid-area: 3/5/4/6; }
+.grvr{ grid-area: 4/5/5/6; }
+.grvi{ grid-area: 5/5/6/6; }
+.gufh{ grid-area: 1/6/2/7; }
+.guft{ grid-area: 2/6/3/7; }
+.guff{ grid-area: 3/6/4/7; }
+.gufr{ grid-area: 4/6/5/7; }
+.gufi{ grid-area: 5/6/6/7; }
+.hakh{ grid-area: 1/7/2/8; }
+.hakt{ grid-area: 2/7/3/8; }
+.hakf{ grid-area: 3/7/4/8; }
+.hakr{ grid-area: 4/7/5/8; }
+.haki{ grid-area: 5/7/6/8; }
+.hilh{ grid-area: 1/8/2/9; }
+.hilt{ grid-area: 2/8/3/9; }
+.hilf{ grid-area: 3/8/4/9; }
+.hilr{ grid-area: 4/8/5/9; }
+.hili{ grid-area: 5/8/6/9; }
+.itfh{ grid-area: 1/9/2/10; }
+.itft{ grid-area: 2/9/3/10; }
+.itff{ grid-area: 3/9/4/10; }
+.itfr{ grid-area: 4/9/5/10; }
+.itfi{ grid-area: 5/9/6/10; }
+.janh{ grid-area: 1/10/2/11; }
+.jant{ grid-area: 2/10/3/11; }
+.janf{ grid-area: 3/10/4/11; }
+.janr{ grid-area: 4/10/5/11; }
+.jani{ grid-area: 5/10/6/11; }
+.jorh{ grid-area: 1/11/2/12; }
+.jort{ grid-area: 2/11/3/12; }
+.jorf{ grid-area: 3/11/4/12; }
+.jorr{ grid-area: 4/11/5/12; }
+.jori{ grid-area: 5/11/6/12; }
+.korh{ grid-area: 1/12/2/13; }
+.kort{ grid-area: 2/12/3/13; }
+.korf{ grid-area: 3/12/4/13; }
+.korr{ grid-area: 4/12/5/13; }
+.kori{ grid-area: 5/12/6/13; }
+.leoh{ grid-area: 1/13/2/14; }
+.leot{ grid-area: 2/13/3/14; }
+.leof{ grid-area: 3/13/4/14; }
+.leor{ grid-area: 4/13/5/14; }
+.leoi{ grid-area: 5/13/6/14; }
+.rikh{ grid-area: 1/14/2/15; }
+.rikt{ grid-area: 2/14/3/15; }
+.rikf{ grid-area: 3/14/4/15; }
+.rikr{ grid-area: 4/14/5/15; }
+.riki{ grid-area: 5/14/6/15; }
+.rinh{ grid-area: 1/15/2/16; }
+.rint{ grid-area: 2/15/3/16; }
+.rinf{ grid-area: 3/15/4/16; }
+.rinr{ grid-area: 4/15/5/16; }
+.rini{ grid-area: 5/15/6/16; }
+.torh{ grid-area: 1/16/2/17; }
+.tort{ grid-area: 2/16/3/17; }
+.torf{ grid-area: 3/16/4/17; }
+.torr{ grid-area: 4/16/5/17; }
+.tori{ grid-area: 5/16/6/17; }
+.vagh{ grid-area: 1/17/2/18; }
+.vagt{ grid-area: 2/17/3/18; }
+.vagf{ grid-area: 3/17/4/18; }
+.vagr{ grid-area: 4/17/5/18; }
+.vagi{ grid-area: 5/17/6/18; }
+.vorh{ grid-area: 1/18/2/19; }
+.vort{ grid-area: 2/18/3/19; }
+.vorf{ grid-area: 3/18/4/19; }
+.vorr{ grid-area: 4/18/5/19; }
+.vori{ grid-area: 5/18/6/19; }
+
+.vp span {
+    -webkit-animation: animate-veiled-mod 3s steps(90) reverse infinite;
+    -moz-animation: animate-veiled-mod 3s steps(90) reverse infinite;
+    -ms-animation: animate-veiled-mod 3s steps(90) reverse infinite;
+    -o-animation: animate-veiled-mod 3s steps(90) reverse infinite;
+    animation: animate-veiled-mod 3s steps(90) reverse infinite;
+    will-change: background-position;
+    white-space: nowrap;
+    object-fit: none;
+    display: inline-block;
+    color: transparent;
+}
+.vp .vp1{ width: 158px; background-position: -14220px; background-image: url("https://web.poecdn.com/image/item/veiled/prefix_01.png");}
+.vp .vp2{ width: 158px; background-position: -14220px; background-image: url("https://web.poecdn.com/image/item/veiled/prefix_02.png");}
+.vp .vp3{ width: 158px; background-position: -14220px; background-image: url("https://web.poecdn.com/image/item/veiled/prefix_03.png");}
+.vp .vp4{ width: 158px; background-position: -14220px; background-image: url("https://web.poecdn.com/image/item/veiled/prefix_04.png");}
+.vp .vp5{ width: 158px; background-position: -14220px; background-image: url("https://web.poecdn.com/image/item/veiled/prefix_05.png");}
+.vp .vp6{ width: 158px; background-position: -14220px; background-image: url("https://web.poecdn.com/image/item/veiled/prefix_06.png");}
+.vp .vs1{ width: 85px; background-position: -7650px; background-image: url("https://web.poecdn.com/image/item/veiled/suffix_01.png");}
+.vp .vs2{ width: 85px; background-position: -7650px; background-image: url("https://web.poecdn.com/image/item/veiled/suffix_02.png");}
+.vp .vs3{ width: 85px; background-position: -7650px; background-image: url("https://web.poecdn.com/image/item/veiled/suffix_03.png");}
+.vp .vs4{ width: 85px; background-position: -7650px; background-image: url("https://web.poecdn.com/image/item/veiled/suffix_04.png");}
+.vp .vs5{ width: 85px; background-position: -7650px; background-image: url("https://web.poecdn.com/image/item/veiled/suffix_05.png");}
+.vp .vs6{ width: 85px; background-position: -7650px; background-image: url("https://web.poecdn.com/image/item/veiled/suffix_06.png");}
+@-webkit-keyframes animate-veiled-mod { 100% { background-position: 0; } }
+@-moz-keyframes animate-veiled-mod { 100% { background-position: 0; } }
+@-ms-keyframes animate-veiled-mod { 100% { background-position: 0; } }
+@-o-keyframes animate-veiled-mod { 100% { background-position: 0; } }
+@keyframes animate-veiled-mod { 100% { background-position: 0; } }
+
